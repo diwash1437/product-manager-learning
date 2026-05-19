@@ -17,3 +17,22 @@
 
 7. Push code
    git push -u origin main
+
+
+
+
+
+   explanation
+
+
+   git init
+→ yo folder lai Git project banaucha
+
+git add .
+→ sab file ready garcha
+
+git commit
+→ yo day ko progress save garcha
+
+git push
+→ GitHub ma upload garcha
