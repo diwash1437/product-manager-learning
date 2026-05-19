@@ -1,0 +1,16 @@
+1. Create /products API
+
+2. Return products array
+
+3. Save file
+
+4. Stop server
+   Ctrl + C
+
+5. Run server again
+   node app.js
+
+6. Open browser
+
+7. Test URL
+   http://localhost:3000/products

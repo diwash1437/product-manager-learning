@@ -1,0 +1,19 @@
+1. Open terminal
+
+2. Initialize git (first time only)
+   git init
+
+3. Add files
+   git add .
+
+4. Save changes
+   git commit -m "Day 1 - Backend setup and products API"
+
+5. Main branch set (first time only)
+   git branch -M main
+
+6. Connect GitHub repository
+   git remote add origin YOUR_GITHUB_LINK
+
+7. Push code
+   git push -u origin main
