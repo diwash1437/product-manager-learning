@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- page ko title -->
+    <title>Product Manager</title>
+
+</head>
+
+<body>
+
+    <!-- heading -->
+    <h1>Products</h1>
+
+    <!-- products show garne empty div -->
+    <div id="product-list"></div>
+
+    <script>
+
+        // backend bata data line function
+        async function getProducts() {
+
+            // backend ko /products API ma request pathaune
+            const response = await fetch("http://localhost:3000/products");
+
+            // JSON data lai JavaScript object ma convert garne
+            const data = await response.json();
+
+            // browser console ma data show garne
+            console.log(data);
+
+        }
+
+        // function run garne
+        getProducts();
+
+    </script>
+
+</body>
+
+</html>
