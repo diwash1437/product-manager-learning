@@ -27,8 +27,19 @@
             // JSON data lai JavaScript object ma convert garne
             const data = await response.json();
 
-            // browser console ma data show garne
-            console.log(data);
+            const list = document.getElementById('product-list');
+            console.log(list);
+            // list.innerHTML = "hello"
+            // products one by one loop garne
+            data.forEach((product) => {
+
+                // page ma product name show garne
+                // innerHTML +=→ page ma add gardai jancha
+                list.innerHTML += `
+        <p>${product.name}</p>
+        `;
+
+            });
 
         }
 
