@@ -5,6 +5,22 @@
 
     <!-- page ko title -->
     <title>Product Manager</title>
+    <style>
+        /* #product-list
+        {
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            background-color: red;
+        } */
+        /* card design  */
+        .card
+        {
+         border: 1px solid black;
+         padding: 15px;
+         margin: 10px;
+         width: 200px;
+        }
+    </style>
 
 </head>
 
@@ -27,6 +43,7 @@
             // JSON data lai JavaScript object ma convert garne
             const data = await response.json();
 
+            // div select garne
             const list = document.getElementById('product-list');
             console.log(list);
             // list.innerHTML = "hello"
@@ -35,8 +52,13 @@
 
                 // page ma product name show garne
                 // innerHTML +=→ page ma add gardai jancha
+                // card create garne
                 list.innerHTML += `
-        <p>${product.name}</p>
+              
+               <div class="card">
+               <p>${product.name}</p>
+               <p> ${product.price}</p>
+               </div>
         `;
 
             });
