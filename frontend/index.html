@@ -120,7 +120,7 @@
             // products one by one loop garne
             // old all cards remove
             list.innerHTML = ""  //clears old cards
-            data.forEach((product) => {
+            data.forEach((product, index) => {
 
                 // page ma product name show garne
                 // innerHTML +=→ page ma add gardai jancha
@@ -130,6 +130,7 @@
                <div class="card">
                <p>${product.name}</p>
                <p> ${product.price}</p>
+               <button onClick="deleteProduct(${product.id})"> Delete</button>
                </div>
         `;
 
@@ -139,18 +140,29 @@
 
 
 
-    async function addOneProductToPage(data) {
-            console.log('data'+ data)
+        async function addOneProductToPage(data) {
+            console.log('data' + data)
             const list = document.getElementById("product-list");
 
             list.innerHTML += `
         <div class="card">
             <p>${data.name}</p>
             <p>${data.price}</p>
+            <button onClick="deleteProduct(${data.id})"> Delete</button>
         </div>
     `;
         }
 
+
+        async function deleteProduct(id) {
+            console.log(id);
+            const response =await fetch(`http://localhost:3000/products/${id}`, {
+                method: "DELETE"
+            });
+            //hello
+            const data= await response.json();
+            renderProducts(data);
+        }
     </script>
 
 </body>
