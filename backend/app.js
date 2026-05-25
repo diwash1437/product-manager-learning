@@ -4,6 +4,7 @@ const cors=require('cors');  // frontend lai backend sanga connect garne help
 //app/server create garne
 const app= express();
 
+app.use(express.json());  // Middleware to parse JSON bodies
 app.use(cors());//permission dine frontend lai
 
 const products = [
@@ -16,6 +17,18 @@ const products = [
 // → browser le /products open garda yo code run huncha
 app.get('/products',(req,res)=>{
     res.json(products);  //products array lai JSON banayera browser ma pathaucha
+})
+
+app.post('/products',(req,res)=>{
+
+    //array ma add garne
+     const newProducts={
+        id: products.length + 1,
+        ...req.body
+    }
+    products.push(newProducts);
+    console.log(newProducts);
+    res.json(newProducts);
 })
 
 
